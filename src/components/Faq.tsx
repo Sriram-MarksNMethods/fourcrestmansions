@@ -78,7 +78,7 @@ export default function Faq() {
 
   return (
     <>
-      <section id="faqs" className="relative z-10 scroll-mt-16 bg-blush py-[60px] lg:py-[50px]">
+      <section id="faqs" className="relative z-10 scroll-mt-16 bg-blush pb-[60px] pt-[60px] lg:py-[50px]">
         <div className="wrap grid lg:grid-cols-12 lg:gap-x-6 lg:gap-y-0">
           <Reveal className="lg:col-span-4">
             <h2 className="mb-[34px] text-center font-serif text-[42px] font-light italic leading-[50px] text-brand lg:text-left lg:text-[52px] lg:leading-[62px]">

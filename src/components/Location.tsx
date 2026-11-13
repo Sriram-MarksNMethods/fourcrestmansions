@@ -13,14 +13,14 @@ const places = [
 
 /*
   Desktop: heading sits over the top of a 1440×979 photo that fades into the page.
-  Phones: heading on plain background above a 390×266 photo (as on Sobha).
+  Phones: label on its own line, heading above a 390×266 photo that also fades in at the top (as on Sobha).
 */
 export default function Location() {
   return (
-    <section id="location" className="relative z-10 scroll-mt-16 bg-blush pt-10 lg:pt-0">
+    <section id="location" className="relative z-10 scroll-mt-16 bg-blush pt-[69px] lg:pt-0">
       <div className="wrap relative z-10 lg:absolute lg:inset-x-0 lg:top-0 lg:pt-[55px]">
         <h2 className="mb-[34px] text-center font-serif text-[42px] font-light italic leading-[50px] text-brand lg:text-[52px] lg:leading-[62px]">
-          <span className="font-sans text-[18px] font-light not-italic uppercase leading-[21px] tracking-[1.5px] text-ink lg:text-[24px] lg:leading-[29px]">
+          <span className="block lg:inline font-sans text-[18px] font-light not-italic uppercase leading-[21px] tracking-[1.5px] text-ink lg:text-[24px] lg:leading-[29px]">
             An Address That{" "}
           </span>
           Connects You to More
@@ -36,7 +36,7 @@ export default function Location() {
           className="object-cover"
         />
         {/* Sobha's photo fades into the page at the top and darkens bottom-left behind the labels */}
-        <div className="absolute inset-0 hidden bg-[linear-gradient(180deg,#f1e9e6_0%,rgba(241,233,230,0.85)_10%,rgba(241,233,230,0)_30%)] lg:block" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,#f1e9e6_0%,rgba(241,233,230,0.85)_10%,rgba(241,233,230,0)_30%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(81,47,40,0.6)_0%,rgba(81,47,40,0)_60%)] lg:bg-[linear-gradient(90deg,rgba(81,47,40,0.55)_0%,rgba(81,47,40,0)_45%)]" />
 
         <div className="absolute inset-x-0 bottom-3 lg:bottom-auto lg:top-[34.3%]">

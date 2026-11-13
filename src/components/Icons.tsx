@@ -97,8 +97,9 @@ export function MinusIcon({ className }: IconProps) {
 export function DownloadIcon({ className }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" className={className} {...line}>
-      <path d="M7 3h7l5 5v13H7Z" />
-      <path d="M14 3v5h5M13 11v6M10 14l3 3 3-3" />
+      {/* Arrow dropping into a tray */}
+      <path d="M12 4v11M7.5 10.5 12 15l4.5-4.5" />
+      <path d="M5 15v4h14v-4" />
     </svg>
   );
 }

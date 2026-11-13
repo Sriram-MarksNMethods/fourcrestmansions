@@ -2,9 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import TraceButton from "./TraceButton";
 import { BedIcon, LoungeIcon, PoolIcon } from "./Icons";
-import { useRequestBrochure } from "@/lib/brochure";
 
 const blocks = [
   {
@@ -15,7 +13,6 @@ const blocks = [
     alt: "Master bedroom with upholstered headboard",
     title: "A Personal Retreat of Comfort & Calm",
     body: "Master bedrooms on every floor set a new standard of luxury living. Every mansion is a 5 BHK with a bathtub, and the living spaces begin on the first floor, away from the street.",
-    cta: "Brochure",
   },
   {
     id: "gather",
@@ -30,7 +27,7 @@ const blocks = [
     id: "unwind",
     label: "Unwind",
     Icon: PoolIcon,
-    image: "/images/pool-villa.jpg",
+    image: "/images/pool-villa-hd.jpg",
     alt: "Private pool and swing deck beside a villa",
     title: "Beyond Amenities. A Lifestyle of Its Own.",
     body: "A clubhouse of around 13,000 to 18,000 sq. ft. with a swimming pool, gym, yoga deck, games lounge and multipurpose hall.",
@@ -43,7 +40,6 @@ const idleBg =
   "bg-[linear-gradient(90deg,#b39d96_0%,#f1e9e6_100%)] hover:bg-[linear-gradient(90deg,rgba(138,87,76,0.32)_0%,rgba(138,87,76,0.18)_41%,rgba(138,87,76,0)_100%)]";
 
 export default function Lifestyle() {
-  const requestBrochure = useRequestBrochure();
   // Sobha: a pill turns "on" while its block spans the vertical centre of the screen ("top center" → "bottom center").
   const [active, setActive] = useState<string | null>(null);
   const refs = useRef<Record<string, HTMLDivElement | null>>({});
@@ -63,11 +59,20 @@ export default function Lifestyle() {
   }, []);
 
   return (
-    <section id="lifestyle" className="relative z-10 scroll-mt-16 bg-blush pb-[10px] lg:pb-[50px] lg:pt-5">
+    <section id="lifestyle" className="relative z-10 scroll-mt-16 bg-blush pb-[10px] pt-[33px] lg:pb-[50px] lg:pt-5">
+      {/* Section heading, same style as the other section headings */}
+      <div className="wrap">
+        <h2 className="mb-[34px] text-center font-serif text-[42px] font-light italic leading-[50px] text-brand lg:mb-[50px] lg:text-[52px] lg:leading-[62px]">
+          <span className="block font-sans text-[18px] font-light not-italic uppercase leading-[21px] tracking-[1.5px] text-ink lg:inline lg:text-[24px] lg:leading-[29px]">
+            Life at Fourcrest.{" "}
+          </span>
+          Live, Gather, Unwind
+        </h2>
+      </div>
       <div className="wrap lg:grid lg:grid-cols-12 lg:gap-x-6">
         {/* Sticky pill nav: 278px wide, 30/50 padding, 28px radius */}
         <nav className="hidden lg:col-span-3 lg:block">
-          <ul className="sticky top-[19px] pt-[90px]">
+          <ul className="sticky top-[109px]">
             {blocks.map(({ id, label, Icon }) => {
               const on = active === id;
               return (
@@ -98,12 +103,12 @@ export default function Lifestyle() {
                 ref={(el) => {
                   refs.current[b.id] = el;
                 }}
-                className="scroll-mt-24 pb-10 lg:pb-0 lg:pt-[110px]"
+                className="scroll-mt-24 lg:pt-[110px] lg:first:pt-5"
               >
                 <div className="grid items-start gap-[35px] lg:grid-cols-12 lg:gap-x-6 lg:gap-y-0">
                   {/* 505×341 image */}
                   <div className={`relative aspect-[505/341] overflow-hidden rounded-[7px] lg:col-span-7 ${even ? "lg:order-2" : ""}`}>
-                    <Image src={b.image} alt={b.alt} fill sizes="(min-width: 1000px) 505px, 100vw" className="object-cover" />
+                    <Image src={b.image} alt={b.alt} fill sizes="(min-width: 1000px) 36vw, 100vw" className="object-cover" />
                   </div>
                   <div className={`text-center lg:col-span-5 ${even ? "lg:text-right" : "lg:text-left"}`}>
                     <h5 className="text-[18px] font-normal uppercase leading-[26px] tracking-[1px] text-brand/75">{b.label}</h5>
@@ -114,14 +119,10 @@ export default function Lifestyle() {
                     >
                       {b.title}
                     </h4>
-                    <div className="mb-[25px] lg:pr-[15px]">
+                    {/* Full paragraph on every screen size (no scroll box on phones) */}
+                    <div className="mb-[25px]">
                       <p className="mb-[30px] text-[16px] lg:mb-5 font-light leading-[26px] text-ink">{b.body}</p>
                     </div>
-                    {b.cta && (
-                      <TraceButton onClick={requestBrochure} className="h-[42px] min-w-[190px] pt-2 text-[10px] leading-[26px] tracking-[2.5px] lg:min-w-[174px] lg:tracking-[1.25px]">
-                        {b.cta}
-                      </TraceButton>
-                    )}
                   </div>
                 </div>
               </div>

@@ -30,6 +30,19 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Lock the page behind the full-screen phone menu; Escape closes it.
+  useEffect(() => {
+    if (!open) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = prev;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
   const link = `block px-[14px] py-2 text-[12px] font-medium uppercase leading-4 tracking-[1.6px] text-white [text-shadow:0_1px_8px_rgba(0,0,0,0.35)] transition-colors duration-500 ${
     fixed ? "hover:text-black" : "hover:text-gold"
   }`;
@@ -70,15 +83,6 @@ export default function Header() {
                 </a>
               ))}
             </nav>
-            {/* Brochure pill in place of Sobha's language switch (same skeleton styling) */}
-            <button
-              type="button"
-              onClick={requestBrochure}
-              className="flex items-center rounded-[100px] border border-white/25 bg-white/15 px-4 py-2 text-[12px] font-medium uppercase leading-4 tracking-[1.6px] text-white backdrop-blur-[2px] transition-shadow duration-200 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.35)]"
-            >
-              <DownloadIcon className="size-4" />
-              <span className="ml-2">Brochure</span>
-            </button>
           </div>
 
           <button
@@ -92,32 +96,64 @@ export default function Header() {
             <span className={`h-px w-6 bg-white transition-transform ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`} />
           </button>
 
-          {/* Phones: brochure icon on the right (Sobha has wishlist/search icons here) */}
-          <button type="button" onClick={requestBrochure} aria-label="Download brochure" className="flex size-10 items-center justify-end text-white lg:hidden">
-            <DownloadIcon className="size-[22px]" />
-          </button>
+          {/* Phones: empty slot so the logo stays centred (brochure lives in the bottom bar) */}
+          <span aria-hidden className="size-10 lg:hidden" />
         </div>
 
-        {open && (
-          <nav className="wrap flex flex-col gap-5 pb-8 pt-6 lg:hidden">
-            {[...leftLinks, ...rightLinks].map((l) => (
-              <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-sm font-medium uppercase tracking-[1.4px] text-white">
-                {l.label}
-              </a>
-            ))}
-            <button
-              type="button"
-              onClick={() => {
-                setOpen(false);
-                requestBrochure();
-              }}
-              className="text-left text-sm font-medium uppercase tracking-[1.4px] text-white"
-            >
-              Download Brochure
-            </button>
-          </nav>
-        )}
       </header>
+
+      {/*
+        Phones: Sobha's full-screen menu (.menu-main-wrap) — black panel that slides in from the left
+        (translateX(-100%) → 0, .3s ease-in), 35/33px padding, 52px rows, close cross top right.
+      */}
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-label="Menu"
+        aria-hidden={!open}
+        inert={!open}
+        className={`fixed inset-0 z-[60] h-dvh overflow-auto bg-black px-[33px] pb-[25px] pt-[35px] transition-transform duration-300 ease-in max-[360px]:px-2.5 lg:hidden ${
+          open ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <button
+          type="button"
+          onClick={() => setOpen(false)}
+          aria-label="Close menu"
+          className="absolute right-1 top-0 flex size-9 items-center justify-center text-white"
+        >
+          <span className="absolute h-[1.5px] w-6 rotate-45 bg-current" />
+          <span className="absolute h-[1.5px] w-6 -rotate-45 bg-current" />
+        </button>
+
+        <nav className="px-3 pt-6">
+          <ul>
+            {[...leftLinks, ...rightLinks].map((l) => (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  className="block pb-[17px] pt-4 text-[16px] font-medium uppercase leading-[19px] tracking-[1.1px] text-white"
+                >
+                  {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          {/* Brochure pill where Sobha has its language pill */}
+          <button
+            type="button"
+            onClick={() => {
+              setOpen(false);
+              requestBrochure();
+            }}
+            className="flex items-center rounded-[100px] border border-white/25 bg-white/15 px-4 py-2 text-[12px] font-medium uppercase leading-4 tracking-[1.6px] text-white"
+          >
+            <DownloadIcon className="size-4" />
+            <span className="ml-2">Brochure</span>
+          </button>
+        </nav>
+      </div>
     </>
   );
 }
