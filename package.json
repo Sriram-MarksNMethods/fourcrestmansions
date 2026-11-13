@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@intl-tel-input/react": "^29.5.11",
     "next": "16.4.6",
     "react": "19.3.0",
     "react-dom": "19.3.0"

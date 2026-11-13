@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+/*
+  Layout, sizes and animation timings measured from
+  sobharealty.com/sobha-communities/sobha-reserve (1440px viewport).
+  Fonts + colours follow the Fourcrest brochure: Collier (Adobe Fonts) for headings, Poppins for body.
+*/
+
+/* Sobha switches to the desktop layout at 1000px */
+@theme {
+  --breakpoint-lg: 62.5rem;
+}
+
+@theme inline {
+  --font-sans: var(--font-poppins), sans-serif;
+  --font-serif: "collier", Georgia, serif; /* Adobe Fonts kit, linked in layout.tsx */
+
+  /* Fourcrest brand colours, sampled from the brochure PDF */
+  --color-brand: #8a574c; /* brown pages, headings + wordmark on light pages */
+  --color-brand-dark: #512f28; /* deep brown (location map page) */
+  --color-gold: #f4cd95; /* wordmark + headings on brown pages */
+  --color-cream: #f3e2c2; /* light text / lines on brown */
+  --color-blush: #f1e9e6; /* light page background */
+  --color-ink: #231f20; /* body text */
+  --color-globus: #f04f38; /* Globus sunburst */
+
+  /* Neutrals, mapped from Sobha's greys onto the blush palette */
+  --color-line: #dccbc5; /* Sobha #e3e3e3 / #dbdbdb */
+  --color-divider: #d2c0ba; /* Sobha #d1d1d1 */
+  --color-field: #a8948e; /* Sobha input border #888e91 */
+  --color-muted: #a8948e; /* Sobha inactive tab #a7a7a7 */
+  --color-footer: #ebe2de; /* Sobha footer #f9f9f9 */
+  --color-footer-line: #c9ab9f; /* Sobha footer divider #d5b9a1 */
+
+  /* GSAP power1.out / power1.in (Sobha's luxury block uses GSAP defaults) */
+  --ease-power1-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-power1-in: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+/* Sobha's container: 1185px content column, widening to 1600px on screens 1800px and up. */
+@utility wrap {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1209px;
+  padding-inline: 20px;
+  @media (min-width: 1000px) {
+    padding-inline: 12px;
+  }
+  @media (min-width: 1800px) {
+    max-width: 1624px;
+  }
+}
+
+body {
+  background: var(--color-blush);
+  color: var(--color-ink);
+}
+
+/* Phone field (intl-tel-input): full width, brand colours in the country list. */
+.fc-phone .iti {
+  display: block;
+  width: 100%;
+  --iti-hover-color: var(--color-blush);
+  --iti-border-color: var(--color-line);
+}
+.fc-phone .iti__search-input:focus {
+  outline: 1px solid var(--color-brand);
+}
+/* Order inside the country button: flag → dial code → chevron */
+.fc-phone .iti__selected-country {
+  display: flex;
+  align-items: center;
+  padding-left: var(--iti-spacer-horizontal);
+}
+.fc-phone .iti__selected-country-primary {
+  display: contents;
+}
+.fc-phone .iti__selected-dial-code {
+  order: 2;
+  margin-left: 8px;
+}
+.fc-phone .iti__arrow {
+  order: 3;
+  margin-left: 10px;
+  margin-right: 4px;
+}
+.fc-phone .iti__selected-dial-code {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.6);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
