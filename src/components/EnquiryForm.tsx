@@ -14,7 +14,7 @@ const purposes = ["Site Visit", "Brochure Download", "General Enquiry"];
 
 // Sobha field: 56px tall, 7px radius, 27px side padding, 15px medium text.
 const field =
-  "h-14 w-full rounded-[7px] border border-field bg-white/60 px-[18px] text-[15px] lg:px-[27px] font-medium leading-[22.5px] text-ink placeholder:text-muted outline-none transition-[border-color,box-shadow] duration-150 ease-in-out focus:border-brand";
+  "h-14 w-full rounded-[7px] border border-field bg-white/60 px-[18px] text-[15px] lg:px-[27px] font-medium leading-[22.5px] text-ink placeholder:text-muted outline-none transition-[border-color,box-shadow] duration-150 ease-in-out focus:border-brand wide:h-[72px] wide:text-[21px] wide:leading-[31px]";
 
 type SelectProps = {
   name: string;
@@ -86,12 +86,12 @@ export default function EnquiryForm() {
       <div className="mx-auto w-full max-w-[1033px] px-4 lg:px-3">
         <div className="grid lg:grid-cols-12 lg:gap-x-6">
           <div className="lg:col-span-5">
-            <h2 className="mb-[34px] text-center font-serif text-[42px] font-light italic leading-[50px] text-brand lg:text-left lg:text-[52px] lg:leading-[62px]">
-              <span className="font-sans text-[18px] font-light not-italic leading-[21px] tracking-[2.7px] text-ink lg:text-[24px] lg:leading-[29px] lg:tracking-[3.6px]">
+            <h2 className="mb-[34px] text-center font-serif text-[42px] font-light italic leading-[50px] text-brand lg:text-left lg:text-[52px] lg:leading-[62px] wide:text-[73px] wide:leading-[87px]">
+              <span className="font-sans text-[18px] font-light not-italic leading-[21px] tracking-[2.7px] text-ink lg:text-[24px] lg:leading-[29px] lg:tracking-[3.6px] wide:text-[34px] wide:leading-[41px] wide:tracking-[5px]">
                 WE&apos;D LOVE TO
               </span>
               <br />
-              Hear From You
+              Hear from you
             </h2>
           </div>
 
@@ -122,7 +122,7 @@ export default function EnquiryForm() {
                     className: field,
                   }}
                 />
-                {phoneError && <p className="mt-1.5 text-[13px] font-medium leading-[19.5px] text-[#d40000]">Invalid phone number</p>}
+                {phoneError && <p className="mt-1.5 text-[13px] font-medium leading-[19.5px] text-[#d40000] wide:text-[18px] wide:leading-[27px]">Invalid phone number</p>}
               </div>
 
               <input name="email" type="email" required placeholder="Email *" aria-label="Email" autoComplete="email" className={`${field} mb-6`} />
@@ -132,7 +132,7 @@ export default function EnquiryForm() {
                 <Select name="purpose" label="- Purpose * -" options={purposes} required value={purpose} onChange={setPurpose} />
               </div>
 
-              <label className="mb-6 flex items-start text-[13px] font-normal leading-5 text-ink/80">
+              <label className="mb-6 flex items-start text-[13px] font-normal leading-5 text-ink/80 wide:text-[18px] wide:leading-[28px]">
                 <input type="checkbox" required className="mr-2.5 mt-px size-[19px] shrink-0 accent-brand" />
                 <span>
                   I authorise Globus Developers and its representatives to contact me via call, SMS, WhatsApp or email
@@ -140,7 +140,7 @@ export default function EnquiryForm() {
                 </span>
               </label>
 
-              <TraceButton type="submit" disabled={status !== "idle"} className="h-[49px] min-w-[160px] text-[14px] tracking-[2.5px]">
+              <TraceButton type="submit" disabled={status !== "idle"} className="h-[49px] min-w-[160px] text-[14px] tracking-[2.5px] wide:text-[20px] wide:tracking-[3.5px]">
                 {status === "idle" ? (
                   "Submit"
                 ) : (

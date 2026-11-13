@@ -11,11 +11,11 @@ export default function Sophistication() {
   return (
     <section className="relative z-10 bg-blush pb-[40px] lg:pb-[80px]">
       <div className="wrap">
-        <h2 className="mb-[34px] text-center font-serif text-[42px] font-light italic leading-[50px] text-brand lg:mb-[50px] lg:text-[52px] lg:leading-[62px]">
-          <span className="block font-sans text-[18px] font-light not-italic uppercase lg:inline leading-[21px] tracking-[1.5px] text-ink lg:text-[24px] lg:leading-[29px]">
+        <h2 className="mb-[34px] text-center font-serif text-[42px] font-light italic leading-[46px] text-brand lg:mb-[50px] lg:text-[52px] lg:leading-[54px] wide:text-[73px] wide:leading-[76px]">
+          <span className="block font-sans text-[18px] font-light not-italic uppercase leading-[21px] tracking-[1.5px] text-ink lg:text-[24px] lg:leading-[29px] wide:text-[34px] wide:leading-[41px] wide:tracking-[2.1px]">
             Four Expressions.{" "}
           </span>
-          One Signature Legacy
+          One signature legacy
         </h2>
       </div>
       <Reveal>

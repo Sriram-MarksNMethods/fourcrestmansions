@@ -38,36 +38,6 @@ export function PlotIcon({ className }: IconProps) {
   );
 }
 
-/* ---- Lifestyle nav ---- */
-export function BedIcon({ className }: IconProps) {
-  return (
-    <svg viewBox="0 0 44 36" className={className} {...line}>
-      <path d="M4 30V6M4 22h36v8M4 22v-6h12a4 4 0 0 1 4 4v2M20 16h14a6 6 0 0 1 6 6" />
-      <circle cx="10" cy="13" r="3" />
-    </svg>
-  );
-}
-
-export function LoungeIcon({ className }: IconProps) {
-  return (
-    <svg viewBox="0 0 46 34" className={className} {...line}>
-      <path d="M8 18v-6a4 4 0 0 1 4-4h22a4 4 0 0 1 4 4v6" />
-      <path d="M4 18a3 3 0 0 1 6 0v4h26v-4a3 3 0 0 1 6 0v8H4Z" />
-      <path d="M8 26v4M38 26v4" />
-    </svg>
-  );
-}
-
-export function PoolIcon({ className }: IconProps) {
-  return (
-    <svg viewBox="0 0 44 36" className={className} {...line}>
-      <path d="M14 22V6a3 3 0 0 1 6 0M26 22V6a3 3 0 0 1 6 0M14 11h12M14 17h12" />
-      <path d="M4 26c3 0 3 2 6 2s3-2 6-2 3 2 6 2 3-2 6-2 3 2 6 2 3-2 6-2" />
-      <path d="M4 32c3 0 3 2 6 2s3-2 6-2 3 2 6 2 3-2 6-2 3 2 6 2 3-2 6-2" />
-    </svg>
-  );
-}
-
 /* ---- Small UI ---- */
 export function PinIcon({ className }: IconProps) {
   return (

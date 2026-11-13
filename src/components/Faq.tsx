@@ -81,7 +81,7 @@ export default function Faq() {
       <section id="faqs" className="relative z-10 scroll-mt-16 bg-blush pb-[60px] pt-[60px] lg:py-[50px]">
         <div className="wrap grid lg:grid-cols-12 lg:gap-x-6 lg:gap-y-0">
           <Reveal className="lg:col-span-4">
-            <h2 className="mb-[34px] text-center font-serif text-[42px] font-light italic leading-[50px] text-brand lg:text-left lg:text-[52px] lg:leading-[62px]">
+            <h2 className="mb-[34px] text-center font-serif text-[42px] font-light italic leading-[50px] text-brand lg:text-left lg:text-[52px] lg:leading-[62px] wide:text-[73px] wide:leading-[87px]">
               FAQs
             </h2>
           </Reveal>
@@ -101,10 +101,10 @@ export default function Faq() {
                       className="flex w-full items-start justify-between px-5 py-[30px] text-left lg:py-[26px]"
                     >
                       <span className="flex items-start">
-                        <span className="mr-5 flex size-9 shrink-0 items-center justify-center rounded-[7px] bg-brand text-[18px] font-normal leading-[18px] text-white">
+                        <span className="mr-5 flex size-9 shrink-0 items-center justify-center rounded-[7px] bg-brand text-[18px] font-normal leading-[18px] text-white wide:text-[25px] wide:leading-[25px]">
                           Q{i + 1}
                         </span>
-                        <span className="pt-0.5 font-serif text-[23px] font-light italic leading-[28px] text-ink lg:text-[25px] lg:leading-[30px]">
+                        <span className="pt-0.5 font-serif text-[23px] font-light italic leading-[28px] text-ink lg:text-[25px] lg:leading-[30px] wide:text-[35px] wide:leading-[42px]">
                           {f.q}
                         </span>
                       </span>
@@ -120,7 +120,7 @@ export default function Faq() {
                     className={`grid transition-[grid-template-rows] duration-[350ms] ease-[ease] ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
                   >
                     <div className="overflow-hidden">
-                      <div className="mb-[26px] mt-[15px] space-y-[1rem] rounded-[7px] border border-line px-[30px] py-10 text-[18px] font-light leading-[28px] text-ink lg:text-[21px] lg:leading-[30px]">
+                      <div className="mb-[26px] mt-[15px] space-y-[1rem] rounded-[7px] border border-line px-[30px] py-10 text-[18px] font-light leading-[28px] text-ink lg:text-[21px] lg:leading-[30px] wide:text-[29px] wide:leading-[42px]">
                         {f.a}
                       </div>
                     </div>

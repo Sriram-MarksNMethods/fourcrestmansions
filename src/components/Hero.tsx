@@ -53,11 +53,11 @@ export default function Hero() {
             </div>
 
             <div className="lg:col-span-8">
-              <h1 className="mb-5 text-center font-serif text-[26px] font-light italic text-brand lg:mb-8 lg:text-left">
-                <span className="font-sans text-[16px] font-light not-italic uppercase leading-[19px] tracking-[1.5px] text-ink">
+              <h1 className="mb-5 text-center font-serif text-[26px] font-light italic text-brand lg:mb-8 lg:text-left wide:text-[36px]">
+                <span className="font-sans text-[16px] font-light not-italic uppercase leading-[19px] tracking-[1.5px] text-ink wide:text-[22px] wide:leading-[27px] wide:tracking-[2.1px]">
                   Your Mansion, Your Signature:{" "}
                 </span>
-                Fourcrest Mansions - Luxury Triplex Villas in Hyderabad
+                Fourcrest Mansions - Luxury triplex villas in Hyderabad
               </h1>
 
               {/* Phones: the stat column is centred as a block, rows stay aligned */}
@@ -67,8 +67,8 @@ export default function Hero() {
                     <span className="mr-5 flex w-[60px] shrink-0 text-brand">
                       <Icon className={iconClass} />
                     </span>
-                    <span className="text-[14px] font-light leading-[17px] text-ink">
-                      <strong className="text-[27px] font-medium leading-[17px]">
+                    <span className="text-[14px] font-light leading-[17px] text-ink wide:text-[20px] wide:leading-[24px]">
+                      <strong className="text-[27px] font-medium leading-[17px] wide:text-[38px] wide:leading-[24px]">
                         <CountUp value={value} />
                       </strong>{" "}
                       {unit}
@@ -85,27 +85,27 @@ export default function Hero() {
 
       <section className="relative z-10 bg-blush pb-[50px]">
         <div className="wrap grid items-center lg:grid-cols-12 lg:gap-x-6 lg:gap-y-0">
-          <p className="mb-[30px] text-center text-[18px] font-light leading-[30px] text-ink lg:col-span-5 lg:mb-[35px] lg:text-left lg:text-[21px]">
+          <p className="mb-[30px] text-center text-[18px] font-light leading-[30px] text-ink lg:col-span-5 lg:mb-[35px] lg:text-left lg:text-[21px] wide:text-[29px] wide:leading-[42px]">
             Some homes accommodate life. Others elevate it. At Fourcrest Mansions, just 28 triplex mansions of about
             6,800 sq. ft. each sit on 500 sq. yd. plots across 6.14 acres, built for comfort and privacy.
           </p>
           <Reveal className="lg:col-span-7">
-            {/* Photo with a smoky brush-stroke edge baked into the PNG (Sobha uses separate desktop / phone crops) */}
+            {/* Plain photo, rounded like the other photos (separate desktop / phone crops) */}
             <Image
-              src="/images/window-morning-brush-v2.png"
-              alt="Morning light through the bedroom window"
-              width={1362}
-              height={930}
+              src="/images/coffee-deck.jpg"
+              alt="Man with a morning coffee on a timber deck overlooking a misty forest"
+              width={2043}
+              height={1395}
               sizes="(min-width: 1000px) 48vw, 100vw"
-              className="hidden h-auto w-full lg:block"
+              className="hidden h-auto w-full rounded-[7px] lg:block"
             />
             <Image
-              src="/images/window-morning-brush-mobile-v2.png"
-              alt="Morning light through the bedroom window"
-              width={700}
-              height={828}
+              src="/images/coffee-deck-mobile.jpg"
+              alt="Man with a morning coffee on a timber deck overlooking a misty forest"
+              width={1050}
+              height={1242}
               sizes="100vw"
-              className="h-auto w-full lg:hidden"
+              className="h-auto w-full rounded-[7px] lg:hidden"
             />
           </Reveal>
         </div>

@@ -7,7 +7,7 @@ import { WHATSAPP_URL } from "@/lib/site";
 export default function BottomBar() {
   const item =
     "flex flex-1 items-center justify-center text-ink transition-colors duration-500 hover:text-brand";
-  const inner = "flex flex-col items-center px-[22px] text-[12px] font-semibold uppercase leading-[15px] tracking-[-0.48px]";
+  const inner = "flex flex-col items-center px-[22px] text-[12px] font-semibold uppercase leading-[15px] tracking-[-0.48px] wide:text-[17px] wide:leading-[21px] wide:tracking-[-0.7px]";
   return (
     <nav aria-label="Quick actions" className="fixed inset-x-0 bottom-0 z-40 flex h-[60px] items-stretch bg-white shadow-[0_-3px_10px_rgba(0,0,0,0.08)]">
       <BrochureButton className={item}>

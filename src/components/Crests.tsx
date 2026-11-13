@@ -41,11 +41,11 @@ export default function Crests() {
     >
       {/* Section heading, same style as "Four Expressions" and "Space to Breathe" */}
       <div className="wrap">
-        <h2 className="mb-[34px] text-center font-serif text-[42px] font-light italic leading-[50px] text-brand lg:mb-[50px] lg:text-[52px] lg:leading-[62px]">
-          <span className="block font-sans text-[18px] font-light not-italic uppercase leading-[21px] tracking-[1.5px] text-ink lg:inline lg:text-[24px] lg:leading-[29px]">
+        <h2 className="mb-[34px] text-center font-serif text-[42px] font-light italic leading-[50px] text-brand lg:mb-[50px] lg:text-[52px] lg:leading-[62px] wide:text-[73px] wide:leading-[87px]">
+          <span className="block font-sans text-[18px] font-light not-italic uppercase leading-[21px] tracking-[1.5px] text-ink lg:inline lg:text-[24px] lg:leading-[29px] wide:text-[34px] wide:leading-[41px] wide:tracking-[2.1px]">
             Distinct by Design.{" "}
           </span>
-          Find the Home That Speaks to You
+          Find the home that speaks to you
         </h2>
       </div>
       <div className="relative">
@@ -81,9 +81,9 @@ export default function Crests() {
                     on ? "motion-safe:animate-[crest-rise_0.7s_0.3s_cubic-bezier(0.22,1,0.36,1)_both]" : ""
                   }`}
                 >
-                  <h3 className="font-serif text-[44px] font-light italic leading-none text-brand lg:text-[72px]">Crest-{c.no}</h3>
-                  <p className="mt-3 text-[18px] leading-tight text-ink lg:mt-4 lg:text-[22px]">{c.name}</p>
-                  <p className="mt-3 text-[15px] font-light leading-[24px] text-ink/80 lg:mt-5 lg:text-[17px] lg:leading-[28px]">{c.body}</p>
+                  <h3 className="font-serif text-[44px] font-light italic leading-none text-brand lg:text-[72px] wide:text-[101px]">Crest-{c.no}</h3>
+                  <p className="mt-3 text-[18px] leading-tight text-ink lg:mt-4 lg:text-[22px] wide:text-[31px]">{c.name}</p>
+                  <p className="mt-3 text-[15px] font-light leading-[24px] text-ink/80 lg:mt-5 lg:text-[17px] lg:leading-[28px] wide:text-[24px] wide:leading-[39px]">{c.body}</p>
                 </div>
               </div>
             );

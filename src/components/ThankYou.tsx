@@ -57,19 +57,19 @@ export default function ThankYou() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(35,31,32,0.55)_0%,rgba(35,31,32,0.75)_100%)]" />
 
       <div className="wrap relative pb-[60px] text-center text-white">
-        <p className={`text-[16px] font-light uppercase tracking-[3.6px] lg:text-[20px] ${rise("delay-[500ms]")}`}>Enquiry Received</p>
-        <h1 className={`mt-2 font-serif text-[64px] font-light italic leading-[72px] text-gold lg:text-[96px] lg:leading-[104px] ${rise("delay-[650ms]")}`}>
-          Thank You
+        <p className={`text-[16px] font-light uppercase tracking-[3.6px] lg:text-[20px] wide:text-[28px] wide:tracking-[5px] ${rise("delay-[500ms]")}`}>Enquiry Received</p>
+        <h1 className={`mt-2 font-serif text-[64px] font-light italic leading-[72px] text-gold lg:text-[96px] lg:leading-[104px] wide:text-[134px] wide:leading-[146px] ${rise("delay-[650ms]")}`}>
+          Thank you
         </h1>
-        <p className={`mx-auto mt-6 max-w-[560px] text-[16px] font-light leading-[26px] text-white/90 lg:text-[18px] lg:leading-[30px] ${rise("delay-[800ms]")}`}>
+        <p className={`mx-auto mt-6 max-w-[560px] text-[16px] font-light leading-[26px] text-white/90 lg:text-[18px] lg:leading-[30px] wide:text-[25px] wide:leading-[42px] ${rise("delay-[800ms]")}`}>
           Our team will get in touch with you shortly about Fourcrest Mansions.
           {brochure && " Your brochure download has started. If it didn't, use the button below."}
         </p>
         <div className={`mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row ${rise("delay-[950ms]")}`}>
-          <TraceButton tone="light" onClick={downloadBrochure} className="h-[49px] min-w-[220px] text-[14px] tracking-[2.5px]">
+          <TraceButton tone="light" onClick={downloadBrochure} className="h-[49px] min-w-[220px] text-[14px] tracking-[2.5px] wide:text-[20px] wide:tracking-[3.5px]">
             Download Brochure
           </TraceButton>
-          <TraceButton tone="light" onClick={() => router.push("/")} className="h-[49px] min-w-[220px] text-[14px] tracking-[2.5px]">
+          <TraceButton tone="light" onClick={() => router.push("/")} className="h-[49px] min-w-[220px] text-[14px] tracking-[2.5px] wide:text-[20px] wide:tracking-[3.5px]">
             Back to Home
           </TraceButton>
         </div>

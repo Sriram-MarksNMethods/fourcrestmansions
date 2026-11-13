@@ -43,7 +43,7 @@ export default function Header() {
     };
   }, [open]);
 
-  const link = `block px-[14px] py-2 text-[12px] font-medium uppercase leading-4 tracking-[1.6px] text-white [text-shadow:0_1px_8px_rgba(0,0,0,0.35)] transition-colors duration-500 ${
+  const link = `block px-[14px] py-2 text-[12px] font-medium uppercase leading-4 tracking-[1.6px] text-white [text-shadow:0_1px_8px_rgba(0,0,0,0.35)] transition-colors duration-500 wide:text-[17px] wide:leading-[22px] wide:tracking-[2.2px] ${
     fixed ? "hover:text-black" : "hover:text-gold"
   }`;
 
@@ -133,7 +133,7 @@ export default function Header() {
                 <a
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="block pb-[17px] pt-4 text-[16px] font-medium uppercase leading-[19px] tracking-[1.1px] text-white"
+                  className="block pb-[17px] pt-4 text-[16px] font-medium uppercase leading-[19px] tracking-[1.1px] text-white wide:text-[22px] wide:leading-[27px] wide:tracking-[1.5px]"
                 >
                   {l.label}
                 </a>
@@ -147,7 +147,7 @@ export default function Header() {
               setOpen(false);
               requestBrochure();
             }}
-            className="flex items-center rounded-[100px] border border-white/25 bg-white/15 px-4 py-2 text-[12px] font-medium uppercase leading-4 tracking-[1.6px] text-white"
+            className="flex items-center rounded-[100px] border border-white/25 bg-white/15 px-4 py-2 text-[12px] font-medium uppercase leading-4 tracking-[1.6px] text-white wide:text-[17px] wide:leading-[22px] wide:tracking-[2.2px]"
           >
             <DownloadIcon className="size-4" />
             <span className="ml-2">Brochure</span>

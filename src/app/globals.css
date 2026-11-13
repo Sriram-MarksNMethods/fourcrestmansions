@@ -9,6 +9,9 @@
 /* Sobha switches to the desktop layout at 1000px */
 @theme {
   --breakpoint-lg: 62.5rem;
+  /* Screens wider than a 15" MacBook (16" MacBook Pro = 1728px, iMacs, external monitors):
+     every px font size, line height and letter spacing is ~1.4x via wide:… classes */
+  --breakpoint-wide: 106.25rem;
 }
 
 @theme inline {
@@ -38,6 +41,7 @@
 }
 
 /* Sobha's container: 1185px content column, widening to 1600px on screens 1800px and up. */
+/* Page column; wide: screens (1700px+, bigger fonts) get a wider column too */
 @utility wrap {
   margin-inline: auto;
   width: 100%;
@@ -45,6 +49,9 @@
   padding-inline: 20px;
   @media (min-width: 1000px) {
     padding-inline: 12px;
+  }
+  @media (min-width: 1700px) {
+    max-width: 1560px;
   }
   @media (min-width: 1800px) {
     max-width: 1624px;

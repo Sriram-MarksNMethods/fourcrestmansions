@@ -19,11 +19,11 @@ export default function Location() {
   return (
     <section id="location" className="relative z-10 scroll-mt-16 bg-blush pt-[69px] lg:pt-0">
       <div className="wrap relative z-10 lg:absolute lg:inset-x-0 lg:top-0 lg:pt-[55px]">
-        <h2 className="mb-[34px] text-center font-serif text-[42px] font-light italic leading-[50px] text-brand lg:text-[52px] lg:leading-[62px]">
-          <span className="block lg:inline font-sans text-[18px] font-light not-italic uppercase leading-[21px] tracking-[1.5px] text-ink lg:text-[24px] lg:leading-[29px]">
+        <h2 className="mb-[34px] text-center font-serif text-[42px] font-light italic leading-[50px] text-brand lg:text-[52px] lg:leading-[62px] wide:text-[73px] wide:leading-[87px]">
+          <span className="block lg:inline font-sans text-[18px] font-light not-italic uppercase leading-[21px] tracking-[1.5px] text-ink lg:text-[24px] lg:leading-[29px] wide:text-[34px] wide:leading-[41px] wide:tracking-[2.1px]">
             An Address That{" "}
           </span>
-          Connects You to More
+          Connects you to more
         </h2>
       </div>
 
@@ -45,8 +45,8 @@ export default function Location() {
               <li key={p.name} className="flex items-start gap-1.5 text-white lg:-ml-2">
                 <PinIcon className="size-3 shrink-0 lg:size-4" />
                 <div>
-                  <p className="text-[9px] font-semibold uppercase leading-3 tracking-[0.6px] lg:text-[13px] lg:leading-4 lg:tracking-[1px]">{p.name}</p>
-                  <p className="text-[8px] font-normal uppercase leading-[11px] tracking-[0.4px] text-white/80 lg:mt-0.5 lg:text-[10px] lg:leading-[14px] lg:tracking-[0.5px]">
+                  <p className="text-[9px] font-semibold uppercase leading-3 tracking-[0.6px] lg:text-[13px] lg:leading-4 lg:tracking-[1px] wide:text-[18px] wide:leading-[22px] wide:tracking-[1.4px]">{p.name}</p>
+                  <p className="text-[8px] font-normal uppercase leading-[11px] tracking-[0.4px] text-white/80 lg:mt-0.5 lg:text-[10px] lg:leading-[14px] lg:tracking-[0.5px] wide:text-[14px] wide:leading-[20px] wide:tracking-[0.7px]">
                     {p.time}
                   </p>
                 </div>
@@ -65,7 +65,7 @@ export default function Location() {
         >
           <span
             aria-hidden
-            className="invisible max-w-0 overflow-hidden whitespace-nowrap text-[14px] font-semibold text-black transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] lg:group-hover:visible lg:group-hover:max-w-48 lg:group-hover:px-5"
+            className="invisible max-w-0 overflow-hidden whitespace-nowrap text-[14px] font-semibold text-black transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] lg:group-hover:visible lg:group-hover:max-w-48 lg:group-hover:px-5 wide:text-[20px]"
           >
             VIEW ON MAP
           </span>

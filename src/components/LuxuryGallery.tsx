@@ -77,8 +77,8 @@ export default function LuxuryGallery() {
     <section className="relative z-10 bg-blush pb-[60px] lg:pb-[50px]">
       {/* "Space to Breathe" sits above the collage as a section heading (same style as "Four Expressions"), not over the photo */}
       <div className="wrap">
-        <h2 className="mb-[34px] text-center font-serif text-[42px] font-light italic leading-[50px] text-brand lg:mb-[50px] lg:text-[52px] lg:leading-[62px]">
-          <span className="block font-sans text-[18px] font-light not-italic uppercase leading-[21px] tracking-[1.5px] text-ink lg:inline lg:text-[24px] lg:leading-[29px]">
+        <h2 className="mb-[34px] text-center font-serif text-[42px] font-light italic leading-[50px] text-brand lg:mb-[50px] lg:text-[52px] lg:leading-[62px] wide:text-[73px] wide:leading-[87px]">
+          <span className="block font-sans text-[18px] font-light not-italic uppercase leading-[21px] tracking-[1.5px] text-ink lg:inline lg:text-[24px] lg:leading-[29px] wide:text-[34px] wide:leading-[41px] wide:tracking-[2.1px]">
             Space to{" "}
           </span>
           Breathe
@@ -96,8 +96,8 @@ export default function LuxuryGallery() {
             }`}
           >
             {/* Landscape cover on desktop, vertical version on phones */}
-            <Image src="/images/garden-path-wide.jpg" alt="Woman walking a stone path through a tropical garden" fill sizes="100vw" className="hidden object-cover lg:block" />
-            <Image src="/images/garden-path-tall.jpg" alt="Woman walking a stone path through a tropical garden" fill sizes="100vw" className="object-cover lg:hidden" />
+            <Image src="/images/pool-deck-wide.jpg" alt="Lounger on a timber deck beside a reflecting pool, looking out to a misty forest" fill sizes="100vw" className="hidden object-cover lg:block" />
+            <Image src="/images/pool-deck-hd.jpg" alt="Lounger on a timber deck beside a reflecting pool, looking out to a misty forest" fill sizes="100vw" className="object-cover lg:hidden" />
           </div>
 
           {/*
@@ -133,7 +133,7 @@ export default function LuxuryGallery() {
                   </div>
                   <div className={`relative w-[133px] translate-y-[150px] opacity-0 max-[400px]:w-20 lg:-left-[7%] lg:w-auto ${tween} ${boxIn}`}>
                     <div className="relative aspect-[379/511] overflow-hidden rounded-[7px]">
-                      <Image src="/images/pool-deck-hd.jpg" alt="Lounger beside a reflecting pool" fill sizes="(min-width: 1000px) 27vw, 140px" className="object-cover" />
+                      <Image src="/images/garden-path-tall.jpg" alt="Woman walking a stone path through a tropical garden" fill sizes="(min-width: 1000px) 27vw, 140px" className="object-cover" />
                     </div>
                   </div>
                 </div>

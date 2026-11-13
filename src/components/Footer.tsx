@@ -59,8 +59,8 @@ const mainLinks = [
 
 // Sobha footer type: titles 16/24 +1.6 tracking, links 12/26 in 32px rows.
 const mainLink =
-  "inline-block py-[3px] text-left text-[16px] font-light uppercase leading-[22px] tracking-[1.6px] text-ink transition-colors duration-500 hover:text-brand lg:px-2.5 lg:leading-[26px]";
-const item = "block px-2.5 py-[3px] text-[12px] font-light leading-[26px] text-ink/75 max-lg:px-0";
+  "inline-block py-[3px] text-left text-[16px] font-light uppercase leading-[22px] tracking-[1.6px] text-ink transition-colors duration-500 hover:text-brand lg:px-2.5 lg:leading-[26px] wide:text-[22px] wide:leading-[36px] wide:tracking-[2.2px]";
+const item = "block px-2.5 py-[3px] text-[12px] font-light leading-[26px] text-ink/75 max-lg:px-0 wide:text-[17px] wide:leading-[36px]";
 
 // Desktop: always-open column. Phones: Sobha's tap-to-open row (16px padding, line underneath).
 function Column({ heading, children }: { heading: string; children: ReactNode }) {
@@ -71,7 +71,7 @@ function Column({ heading, children }: { heading: string; children: ReactNode })
         type="button"
         onClick={() => setOpen(!open)}
         aria-expanded={open}
-        className="flex w-full items-center justify-between py-4 text-left text-[16px] font-normal uppercase leading-6 tracking-[1.6px] text-ink lg:pointer-events-none lg:mb-2.5 lg:px-2.5 lg:py-0"
+        className="flex w-full items-center justify-between py-4 text-left text-[16px] font-normal uppercase leading-6 tracking-[1.6px] text-ink lg:pointer-events-none lg:mb-2.5 lg:px-2.5 lg:py-0 wide:text-[22px] wide:tracking-[2.2px]"
       >
         {heading}
         <ChevronDownIcon className={`size-4 transition-transform duration-300 lg:hidden ${open ? "rotate-180" : ""}`} />
@@ -146,11 +146,11 @@ export default function Footer() {
         </div>
 
         <div className="h-px bg-footer-line" />
-        <div className="grid items-center justify-items-center gap-3 py-[45px] text-center text-[12px] font-normal uppercase leading-[18px] tracking-[1.2px] text-ink lg:grid-cols-3 lg:justify-items-stretch lg:gap-x-6 lg:text-left">
+        <div className="grid items-center justify-items-center gap-3 py-[45px] text-center text-[12px] font-normal uppercase leading-[18px] tracking-[1.2px] text-ink lg:grid-cols-3 lg:justify-items-stretch lg:gap-x-6 lg:text-left wide:text-[17px] wide:leading-[25px] wide:tracking-[1.7px]">
           <span>© 2026. Globus Developers, all rights reserved.</span>
           <span className="normal-case tracking-normal text-ink/60 lg:text-center">All images are artistic impressions.</span>
           <span className="flex items-center justify-center lg:justify-end">
-            <BrochureButton className="pr-3 uppercase tracking-[1.2px] transition-colors duration-500 hover:text-brand">Brochure</BrochureButton>
+            <BrochureButton className="pr-3 uppercase tracking-[1.2px] transition-colors duration-500 hover:text-brand wide:tracking-[1.7px]">Brochure</BrochureButton>
             <span>|</span>
             <Link href="/#enquire" className="pl-3 transition-colors duration-500 hover:text-brand">
               Enquire
