@@ -3,8 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import GlobusLogo from "./GlobusLogo";
-import { DownloadIcon } from "./Icons";
-import { useRequestBrochure } from "@/lib/brochure";
+import { jumpToTop } from "@/lib/scroll";
 
 const leftLinks = [
   { label: "Overview", href: "/#overview" },
@@ -20,7 +19,6 @@ const rightLinks = [
 export default function Header() {
   const [fixed, setFixed] = useState(false);
   const [open, setOpen] = useState(false);
-  const requestBrochure = useRequestBrochure();
 
   // Sobha adds body.fixed-header once the page is scrolled 5px or more.
   useEffect(() => {
@@ -70,9 +68,21 @@ export default function Header() {
             ))}
           </nav>
 
-          <Link href="/" aria-label="Globus Developers, home" className="flex text-white lg:w-[178px] lg:justify-center">
+          <Link
+            href="/"
+            aria-label="Globus Developers, home"
+            // Jump straight to the top (no smooth scroll) and drop any #section from the address
+            onClick={(e) => {
+              if (window.location.pathname !== "/") return;
+              e.preventDefault();
+              setOpen(false);
+              jumpToTop();
+              history.replaceState(null, "", "/");
+            }}
+            className="flex text-white lg:w-[178px] lg:justify-center"
+          >
             {/* Brochure colours: white lettering, orange-red sunburst */}
-            <GlobusLogo className="h-7 w-auto drop-shadow-[0_1px_6px_rgba(0,0,0,0.35)] lg:h-[34px]" markClassName="fill-globus" />
+            <GlobusLogo className="h-9 w-auto drop-shadow-[0_1px_6px_rgba(0,0,0,0.35)] lg:h-[48px]" markClassName="fill-globus" />
           </Link>
 
           <div className="hidden flex-1 items-center justify-end gap-2.5 lg:flex">
@@ -90,14 +100,14 @@ export default function Header() {
             onClick={() => setOpen(!open)}
             aria-expanded={open}
             aria-label={open ? "Close menu" : "Open menu"}
-            className="order-first flex size-10 flex-col items-start justify-center gap-1.5 lg:hidden"
+            className="flex size-10 flex-col items-end justify-center gap-1.5 lg:hidden"
           >
             <span className={`h-px w-6 bg-white transition-transform ${open ? "translate-y-[3.5px] rotate-45" : ""}`} />
             <span className={`h-px w-6 bg-white transition-transform ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`} />
           </button>
 
-          {/* Phones: empty slot so the logo stays centred (brochure lives in the bottom bar) */}
-          <span aria-hidden className="size-10 lg:hidden" />
+          {/* Phones: empty slot on the left so the logo stays centred (menu button is on the right) */}
+          <span aria-hidden className="order-first size-10 lg:hidden" />
         </div>
 
       </header>
@@ -120,13 +130,14 @@ export default function Header() {
           type="button"
           onClick={() => setOpen(false)}
           aria-label="Close menu"
-          className="absolute right-1 top-0 flex size-9 items-center justify-center text-white"
+          className="absolute right-4 top-[23px] flex size-9 items-center justify-center text-white"
         >
           <span className="absolute h-[1.5px] w-6 rotate-45 bg-current" />
           <span className="absolute h-[1.5px] w-6 -rotate-45 bg-current" />
         </button>
 
-        <nav className="px-3 pt-6">
+        {/* Links centred on the screen, both ways */}
+        <nav className="flex min-h-full flex-col items-center justify-center px-3 text-center">
           <ul>
             {[...leftLinks, ...rightLinks].map((l) => (
               <li key={l.href}>
@@ -140,18 +151,6 @@ export default function Header() {
               </li>
             ))}
           </ul>
-          {/* Brochure pill where Sobha has its language pill */}
-          <button
-            type="button"
-            onClick={() => {
-              setOpen(false);
-              requestBrochure();
-            }}
-            className="flex items-center rounded-[100px] border border-white/25 bg-white/15 px-4 py-2 text-[12px] font-medium uppercase leading-4 tracking-[1.6px] text-white wide:text-[17px] wide:leading-[22px] wide:tracking-[2.2px]"
-          >
-            <DownloadIcon className="size-4" />
-            <span className="ml-2">Brochure</span>
-          </button>
         </nav>
       </div>
     </>

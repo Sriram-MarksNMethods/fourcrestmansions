@@ -81,7 +81,7 @@ export default function EnquiryForm() {
   };
 
   return (
-    <section id="enquire" className="relative z-10 scroll-mt-16 bg-blush pb-[50px]">
+    <section id="enquire" className="relative z-10 scroll-mt-16 bg-blush pb-[50px] pt-[60px] lg:pt-[90px]">
       <Curtain show={status === "leaving"} />
       <div className="mx-auto w-full max-w-[1033px] px-4 lg:px-3">
         <div className="grid lg:grid-cols-12 lg:gap-x-6">

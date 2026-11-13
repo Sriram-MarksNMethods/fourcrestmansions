@@ -27,6 +27,11 @@
   --color-ink: #231f20; /* body text */
   --color-globus: #f04f38; /* Globus sunburst */
 
+  /* Section backgrounds (client palette, 2026-11-13) */
+  --color-stone: #ece5e2; /* light alternate section background */
+  --color-umber: #85554c; /* brown section background */
+  --color-honey: #ebc38f; /* headings (and icons/accents) on umber sections */
+
   /* Neutrals, mapped from Sobha's greys onto the blush palette */
   --color-line: #dccbc5; /* Sobha #e3e3e3 / #dbdbdb */
   --color-divider: #d2c0ba; /* Sobha #d1d1d1 */
@@ -122,3 +127,34 @@ body {
   to { opacity: 1; transform: none; }
 }
 
+
+/*
+  Amenity icons, drawn like a pen on a loop.
+  - Every path has pathLength="1", so a dash of 1 covers the whole line.
+  - Within an icon the strokes draw one after another (--stroke: 0, 1, 2 ... set in Amenities.tsx),
+    and each icon starts a little after the previous one (--icon).
+  - Cycle (6s): draw (0-28%), hold, fade out (82-92%), wait hidden, then draw again.
+  - Only runs once the section is on screen (.is-drawing added by Amenities.tsx), so you see it start.
+*/
+@keyframes icon-draw {
+  0% { stroke-dashoffset: 1; opacity: 1; }
+  28% { stroke-dashoffset: 0; opacity: 1; }
+  82% { stroke-dashoffset: 0; opacity: 1; }
+  92% { stroke-dashoffset: 0; opacity: 0; }
+  100% { stroke-dashoffset: 1; opacity: 0; }
+}
+.icon-draw :is(path, circle) {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.is-drawing .icon-draw :is(path, circle) {
+  animation: icon-draw 6s cubic-bezier(0.45, 0, 0.35, 1) infinite both;
+  animation-delay: calc(var(--icon, 0) * 0.18s + var(--stroke, 0) * 0.32s);
+}
+@media (prefers-reduced-motion: reduce) {
+  .icon-draw :is(path, circle),
+  .is-drawing .icon-draw :is(path, circle) {
+    animation: none !important;
+    stroke-dashoffset: 0;
+  }
+}

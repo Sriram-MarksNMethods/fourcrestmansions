@@ -1,7 +1,6 @@
-import Image, { getImageProps } from "next/image";
+import { getImageProps } from "next/image";
 import CountUp from "./CountUp";
 import FourcrestLogo from "./FourcrestLogo";
-import Reveal from "./Reveal";
 import { LandIcon, MansionIcon, PlotIcon } from "./Icons";
 
 const stats = [
@@ -37,12 +36,18 @@ export default function Hero() {
 
       <section
         id="overview"
-        className="relative z-10 -mt-20 min-h-[247px] scroll-mt-16 overflow-hidden rounded-t-[30px] bg-[rgba(241,233,230,0.4)] py-[50px] backdrop-blur-[42px] lg:-mt-[57px] lg:py-10 before:absolute before:inset-x-0 before:bottom-0 before:h-[301px] before:bg-[linear-gradient(180deg,rgba(241,233,230,0)_0%,rgba(241,233,230,0.5)_16%,#f1e9e6_45%,#f1e9e6_100%)] before:content-['']"
+        className="relative z-10 -mt-20 min-h-[247px] scroll-mt-16 rounded-t-[30px] bg-[rgba(241,233,230,0.4)] py-[50px] backdrop-blur-[42px] lg:-mt-[57px] lg:py-10 before:absolute before:inset-0 before:rounded-t-[30px] before:bg-[linear-gradient(180deg,rgba(241,233,230,0)_0%,rgba(241,233,230,0.5)_16%,#f1e9e6_45%,#f1e9e6_100%)] before:content-['']"
       >
         <div className="wrap relative">
           <div className="grid lg:grid-cols-12 lg:gap-x-6 lg:gap-y-0">
-            <div className="flex items-center justify-center lg:col-span-3 lg:justify-start">
-              <FourcrestLogo className="h-auto w-[239px] text-brand" />
+            {/*
+              Logo on a white square card, lifted so its top overlaps the hero photo
+              (like the project logo card on sobharealty.com project pages)
+            */}
+            <div className="flex justify-center lg:col-span-3 lg:items-start lg:justify-start">
+              <div className="-mt-[95px] grid aspect-square w-[160px] place-items-center rounded-[7px] bg-white shadow-[0_12px_40px_rgba(35,31,32,0.10)] lg:-mt-[80px] lg:w-[180px] wide:w-[240px]">
+                <FourcrestLogo className="h-auto w-[120px] text-brand lg:w-[136px] wide:w-[180px]" />
+              </div>
             </div>
 
             {/* Phones: Sobha turns the vertical divider into an 86px rule, 30px above and below */}
@@ -83,33 +88,6 @@ export default function Hero() {
         </div>
       </section>
 
-      <section className="relative z-10 bg-blush pb-[50px]">
-        <div className="wrap grid items-center lg:grid-cols-12 lg:gap-x-6 lg:gap-y-0">
-          <p className="mb-[30px] text-center text-[18px] font-light leading-[30px] text-ink lg:col-span-5 lg:mb-[35px] lg:text-left lg:text-[21px] wide:text-[29px] wide:leading-[42px]">
-            Some homes accommodate life. Others elevate it. At Fourcrest Mansions, just 28 triplex mansions of about
-            6,800 sq. ft. each sit on 500 sq. yd. plots across 6.14 acres, built for comfort and privacy.
-          </p>
-          <Reveal className="lg:col-span-7">
-            {/* Plain photo, rounded like the other photos (separate desktop / phone crops) */}
-            <Image
-              src="/images/coffee-deck.jpg"
-              alt="Man with a morning coffee on a timber deck overlooking a misty forest"
-              width={2043}
-              height={1395}
-              sizes="(min-width: 1000px) 48vw, 100vw"
-              className="hidden h-auto w-full rounded-[7px] lg:block"
-            />
-            <Image
-              src="/images/coffee-deck-mobile.jpg"
-              alt="Man with a morning coffee on a timber deck overlooking a misty forest"
-              width={1050}
-              height={1242}
-              sizes="100vw"
-              className="h-auto w-full rounded-[7px] lg:hidden"
-            />
-          </Reveal>
-        </div>
-      </section>
     </>
   );
 }

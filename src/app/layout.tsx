@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "@/components/SmoothScroll";
 
 // Body copy: Poppins (as in the brochure).
 const poppins = Poppins({
@@ -23,7 +24,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <link rel="preconnect" href="https://use.typekit.net" crossOrigin="" />
         <link rel="stylesheet" href="https://use.typekit.net/uvl1whu.css" />
       </head>
-      <body className="font-sans font-light">{children}</body>
+      <body className="font-sans font-light">
+        {/* Site-wide smooth wheel scrolling (Lenis) */}
+        <SmoothScroll />
+        {children}
+      </body>
     </html>
   );
 }

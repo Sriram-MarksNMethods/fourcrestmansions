@@ -74,7 +74,7 @@ export default function LuxuryGallery() {
   const boxIn = active ? "translate-y-0! opacity-100!" : "";
 
   return (
-    <section className="relative z-10 bg-blush pb-[60px] lg:pb-[50px]">
+    <section className="relative z-10 bg-blush pb-[60px] pt-[60px] lg:pb-[50px] lg:pt-[90px]">
       {/* "Space to Breathe" sits above the collage as a section heading (same style as "Four Expressions"), not over the photo */}
       <div className="wrap">
         <h2 className="mb-[34px] text-center font-serif text-[42px] font-light italic leading-[50px] text-brand lg:mb-[50px] lg:text-[52px] lg:leading-[62px] wide:text-[73px] wide:leading-[87px]">
@@ -113,7 +113,7 @@ export default function LuxuryGallery() {
                 <div className="mb-[10vh] flex items-start justify-between lg:mb-0 lg:block">
                   <div className={`relative mt-[35px] w-[135px] -translate-y-[150px] opacity-0 max-[400px]:w-20 lg:left-[7%] lg:mt-0 lg:w-auto ${tween} ${boxIn}`}>
                     <div className="relative aspect-[379/511] overflow-hidden rounded-[7px]">
-                      <Image src="/images/swing-chair.jpg" alt="Woman relaxing on a rattan swing chair in a garden" fill sizes="(min-width: 1000px) 27vw, 140px" className="object-cover" />
+                      <Image src="/images/swing-chair-empty.jpg" alt="Empty rattan swing chair on a terrace facing a tropical garden" fill sizes="(min-width: 1000px) 27vw, 140px" className="object-cover" />
                     </div>
                   </div>
                   <div className={`relative w-[103px] translate-y-[150px] opacity-0 max-[360px]:w-20 lg:left-[7%] lg:mt-[86px] lg:w-auto lg:pl-10 ${tween} ${boxIn}`}>
@@ -133,7 +133,7 @@ export default function LuxuryGallery() {
                   </div>
                   <div className={`relative w-[133px] translate-y-[150px] opacity-0 max-[400px]:w-20 lg:-left-[7%] lg:w-auto ${tween} ${boxIn}`}>
                     <div className="relative aspect-[379/511] overflow-hidden rounded-[7px]">
-                      <Image src="/images/garden-path-tall.jpg" alt="Woman walking a stone path through a tropical garden" fill sizes="(min-width: 1000px) 27vw, 140px" className="object-cover" />
+                      <Image src="/images/garden-path-lights.jpg" alt="Garden path lit by bollard lights under trees at golden hour" fill sizes="(min-width: 1000px) 27vw, 140px" className="object-cover" />
                     </div>
                   </div>
                 </div>

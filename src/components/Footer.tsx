@@ -5,7 +5,6 @@ import { useState, type ReactNode } from "react";
 import GlobusLogo from "./GlobusLogo";
 import { ChevronDownIcon } from "./Icons";
 import BrochureButton from "./BrochureButton";
-import { MAP_URL } from "@/lib/site";
 
 // Lists from the brochure ("An Address That Connects You to More" + elevations).
 const topColumns = [
@@ -51,15 +50,8 @@ const explore = [
   { label: "FAQs", href: "#faqs" },
 ];
 const elevations = ["Crest-01 Modern Elegance", "Crest-02 Timeless Grandeur", "Crest-03 The Classic", "Crest-04 Distinctive Expression"];
-const mainLinks = [
-  { label: "Contact Us", href: "/#enquire" },
-  { label: "View on Map", href: MAP_URL, external: true },
-  { label: "Back to Top", href: "#top" },
-];
 
-// Sobha footer type: titles 16/24 +1.6 tracking, links 12/26 in 32px rows.
-const mainLink =
-  "inline-block py-[3px] text-left text-[16px] font-light uppercase leading-[22px] tracking-[1.6px] text-ink transition-colors duration-500 hover:text-brand lg:px-2.5 lg:leading-[26px] wide:text-[22px] wide:leading-[36px] wide:tracking-[2.2px]";
+// Sobha footer type: links 12/26 in 32px rows.
 const item = "block px-2.5 py-[3px] text-[12px] font-light leading-[26px] text-ink/75 max-lg:px-0 wide:text-[17px] wide:leading-[36px]";
 
 // Desktop: always-open column. Phones: Sobha's tap-to-open row (16px padding, line underneath).
@@ -88,7 +80,7 @@ export default function Footer() {
       <div className="relative mb-[25px]">
         <div className="absolute inset-x-0 top-1/2 h-px bg-footer-line" />
         <div className="relative mx-auto flex max-w-[320px] justify-center bg-footer">
-          <GlobusLogo className="h-[34px] w-auto text-ink" markClassName="fill-globus" />
+          <GlobusLogo className="h-[48px] w-auto text-ink" markClassName="fill-globus" />
         </div>
       </div>
 
@@ -127,25 +119,10 @@ export default function Footer() {
               </li>
             ))}
           </Column>
-          <ul className="mb-[55px] mt-8 pl-0.5 lg:mt-0">
-            {mainLinks.map((l) => (
-              <li key={l.label} className="mb-[30px] lg:mb-[18px]">
-                <a
-                  href={l.href}
-                  {...(l.external ? { target: "_blank", rel: "noreferrer" } : {})}
-                  className={mainLink}
-                >
-                  {l.label}
-                </a>
-              </li>
-            ))}
-            <li className="mb-[30px] lg:mb-[18px]">
-              <BrochureButton className={mainLink}>Download Brochure</BrochureButton>
-            </li>
-          </ul>
         </div>
 
-        <div className="h-px bg-footer-line" />
+        {/* Phones: the last tap-to-open row already has a line under it */}
+        <div className="hidden h-px bg-footer-line lg:block" />
         <div className="grid items-center justify-items-center gap-3 py-[45px] text-center text-[12px] font-normal uppercase leading-[18px] tracking-[1.2px] text-ink lg:grid-cols-3 lg:justify-items-stretch lg:gap-x-6 lg:text-left wide:text-[17px] wide:leading-[25px] wide:tracking-[1.7px]">
           <span>© 2026. Globus Developers, all rights reserved.</span>
           <span className="normal-case tracking-normal text-ink/60 lg:text-center">All images are artistic impressions.</span>

@@ -31,7 +31,7 @@ export default function Lifestyle() {
   return (
     <section
       id="lifestyle"
-      className="relative z-10 scroll-mt-16 bg-blush pb-[10px] pt-[33px] lg:pb-[50px] lg:pt-5"
+      className="relative z-10 scroll-mt-16 bg-stone pb-[40px] pt-[60px] lg:pb-[80px] lg:pt-[90px]"
     >
       {/* Section heading, same style as the other section headings */}
       <div className="wrap">

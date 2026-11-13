@@ -37,12 +37,12 @@ export default function Crests() {
       aria-label="The four Fourcrest elevations"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
-      className="relative z-10 scroll-mt-[82px] bg-blush lg:scroll-mt-[70px] pb-[60px] lg:pb-[90px]"
+      className="relative z-10 scroll-mt-[82px] bg-stone pb-[60px] pt-[60px] lg:scroll-mt-[70px] lg:pb-[90px] lg:pt-[90px]"
     >
-      {/* Section heading, same style as "Four Expressions" and "Space to Breathe" */}
+      {/* Section heading on two lines: black "Distinct by Design." then the brown line */}
       <div className="wrap">
         <h2 className="mb-[34px] text-center font-serif text-[42px] font-light italic leading-[50px] text-brand lg:mb-[50px] lg:text-[52px] lg:leading-[62px] wide:text-[73px] wide:leading-[87px]">
-          <span className="block font-sans text-[18px] font-light not-italic uppercase leading-[21px] tracking-[1.5px] text-ink lg:inline lg:text-[24px] lg:leading-[29px] wide:text-[34px] wide:leading-[41px] wide:tracking-[2.1px]">
+          <span className="block font-sans text-[18px] font-light not-italic uppercase leading-[21px] tracking-[1.5px] text-ink lg:text-[24px] lg:leading-[29px] wide:text-[34px] wide:leading-[41px] wide:tracking-[2.1px]">
             Distinct by Design.{" "}
           </span>
           Find the home that speaks to you

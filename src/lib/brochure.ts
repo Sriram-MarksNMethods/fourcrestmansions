@@ -1,5 +1,6 @@
 import { useRouter } from "next/navigation";
 import { BROCHURE_URL } from "./site";
+import { scrollToElement } from "./scroll";
 
 /*
   Brochure gate.
@@ -52,6 +53,6 @@ export function useRequestBrochure() {
       return;
     }
     window.dispatchEvent(new Event(BROCHURE_REQUEST_EVENT));
-    form.scrollIntoView({ behavior: "smooth" });
+    scrollToElement(form);
   };
 }
